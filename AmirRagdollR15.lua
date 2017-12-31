@@ -3,7 +3,7 @@
 -- 12/31/2017
 
 -- To Enable:
--- Call Ragdoll on client (first), and RagdollServer on server (second)
+-- Call Ragdoll on client (1st), and RagdollServer on server (2nd)
 --[[ e.g.
 	-- CLIENT
 	Ragdoll.Ragdoll(Character)
