@@ -459,7 +459,6 @@ if Tool and script.ClassName == "Script" then
 	end)
 end
 
--- Created by Quenty (@Quenty, follow me on twitter).
 
 end))
 LocalScript6.Name = "Animate"
