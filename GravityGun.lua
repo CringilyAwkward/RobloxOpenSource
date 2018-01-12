@@ -263,57 +263,11 @@ end
 Tool.Equipped:connect(equip)
 Tool.Unequipped:connect(unequip)
 end))
-Script5.Name = "qPerfectionWeld"
+Script5.Name = "TwistedKhidweld"
 Script5.Parent = Tool0
 table.insert(cors,sandbox(Script5,function()
--- Created by Quenty (@Quenty, follow me on twitter).
--- Should work with only ONE copy, seamlessly with weapons, trains, et cetera.
--- Parts should be ANCHORED before use. It will, however, store relatives values and so when tools are reparented, it'll fix them.
-
---[[ INSTRUCTIONS
-- Place in the model
-- Make sure model is anchored
-- That's it. It will weld the model and all children. 
-
-THIS SCRIPT SHOULD BE USED ONLY BY ITSELF. THE MODEL SHOULD BE ANCHORED. 
-THIS SCRIPT SHOULD BE USED ONLY BY ITSELF. THE MODEL SHOULD BE ANCHORED. 
-THIS SCRIPT SHOULD BE USED ONLY BY ITSELF. THE MODEL SHOULD BE ANCHORED. 
-THIS SCRIPT SHOULD BE USED ONLY BY ITSELF. THE MODEL SHOULD BE ANCHORED. 
-THIS SCRIPT SHOULD BE USED ONLY BY ITSELF. THE MODEL SHOULD BE ANCHORED. 
-THIS SCRIPT SHOULD BE USED ONLY BY ITSELF. THE MODEL SHOULD BE ANCHORED. 
-THIS SCRIPT SHOULD BE USED ONLY BY ITSELF. THE MODEL SHOULD BE ANCHORED. 
-THIS SCRIPT SHOULD BE USED ONLY BY ITSELF. THE MODEL SHOULD BE ANCHORED. 
-
-This script is designed to be used is a regular script. In a local script it will weld, but it will not attempt to handle ancestory changes. 
-]]
-
---[[ DOCUMENTATION
-- Will work in tools. If ran more than once it will not create more than one weld.  This is especially useful for tools that are dropped and then picked up again.
-- Will work in PBS servers
-- Will work as long as it starts out with the part anchored
-- Stores the relative CFrame as a CFrame value
-- Takes careful measure to reduce lag by not having a joint set off or affected by the parts offset from origin
-- Utilizes a recursive algorith to find all parts in the model
-- Will reweld on script reparent if the script is initially parented to a tool.
-- Welds as fast as possible
-]]
-
--- qPerfectionWeld.lua
--- Created 10/6/2014
--- Author: Quenty
--- Version 1.0.3
-
--- Updated 10/14/2014 - Updated to 1.0.1
---- Bug fix with existing ROBLOX welds ? Repro by asimo3089
-
--- Updated 10/14/2014 - Updated to 1.0.2
---- Fixed bug fix. 
-
--- Updated 10/14/2014 - Updated to 1.0.3
---- Now handles joints semi-acceptably. May be rather hacky with some joints. :/
 
 local NEVER_BREAK_JOINTS = false -- If you set this to true it will never break joints (this can create some welding issues, but can save stuff like hinges).
-
 
 local function CallOnChildren(Instance, FunctionToCall)
 	-- Calls a function on each of the children of a certain object, using recursion.  
@@ -454,10 +408,10 @@ local function WeldTogether(Part0, Part1, JointType, WeldParent)
 end
 
 local function WeldParts(Parts, MainPart, JointType, DoNotUnanchor)
-	-- @param Parts The Parts to weld. Should be anchored to prevent really horrible results.
-	-- @param MainPart The part to weld the model to (can be in the model).
-	-- @param [JointType] The type of joint. Defaults to weld. 
-	-- @parm DoNotUnanchor Boolean, if true, will not unachor the model after cmopletion.
+	-- @xcringily Parts The Parts to weld. Should be anchored to prevent really horrible results.
+	-- @xcringily MainPart The part to weld the model to (can be in the model).
+	-- @xcringily [JointType] The type of joint. Defaults to weld. 
+	-- @xcringily DoNotUnanchor Boolean, if true, will not unachor the model after cmopletion.
 	
 	for _, Part in pairs(Parts) do
 		if ShouldBreakJoints(Part) then
@@ -488,7 +442,7 @@ local function PerfectionWeld()
 	if PrimaryPart then
 		WeldParts(Parts, PrimaryPart, "Weld", false)
 	else
-		warn("qWeld - Unable to weld part")
+		warn("tWeld - Unable to weld part")
 	end
 	
 	return Tool
