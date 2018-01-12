@@ -376,10 +376,10 @@ end
 
 local function WeldTogether(Part0, Part1, JointType, WeldParent)
 	--- Weld's 2 parts together
-	-- @param Part0 The first part
-	-- @param Part1 The second part (Dependent part most of the time).
-	-- @param [JointType] The type of joint. Defaults to weld.
-	-- @param [WeldParent] Parent of the weld, Defaults to Part0 (so GC is better).
+	-- @xcringily Part0 The first part
+	-- @xcringily Part1 The second part (Dependent part most of the time).
+	-- @xcringily [JointType] The type of joint. Defaults to weld.
+	-- @xcringily [WeldParent] Parent of the weld, Defaults to Part0 (so GC is better).
 	-- @return The weld created.
 
 	JointType = JointType or "Weld"
