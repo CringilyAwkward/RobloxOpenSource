@@ -237,7 +237,7 @@ local Ragdoll, Unragdoll, RagdollServer, UnragdollServer, PlayerRemoving, IsRagd
 		for Motor,Parent in next,mJointParent do Motor.Parent = Parent end
 		JointParent[PlayerName] = nil
 		for _,v in next,Character:GetChildren() do
-			-- NOTE(alex): For some reason in a server re-enabling causes 
+			-- NOTE(amir): For some reason in a server re-enabling causes 
 			-- them to spaz out, so just.. remake them every time.
 --			if (v:IsA('Constraint')) then v.Enabled = false end
 			if (v:IsA('Constraint')) then v:Destroy() end
